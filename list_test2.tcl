@@ -1,8 +1,14 @@
 set b [list a b {c d e} { f {g h}}]
-puts "Treated as a list: $b\n"
+puts "Treated as a list: $b, length: [llength $b]\n"
 
 set b [split "a b {c d e} {f {g h}}"]
-puts "Transformed by split: $b\n"
+puts "Transformed1 by split: $b, length: [llength $b]\n"
+
+set b [split "a b c d e f g h"]
+puts "Transformed2 by split: $b, length: [llength $b]\n"
+
+set b "comp.lang.tcl.announce"
+puts "Split result: [split $b "."]"
 
 set a [concat a b {c d e} {f {g h}}]
 puts "Concated : $a\n"
